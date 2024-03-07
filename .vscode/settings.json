@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/6b241e32-f6c1-4289-adcc-5ceec5849029/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/thundergun",
+    "appService.deploySubpath": "."
+}
