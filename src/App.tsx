@@ -11,6 +11,8 @@ import AppToolbar from './components/toolbar/toolbar';
 import CssBaseline from "@mui/material/CssBaseline";
 import { SessionKeys } from './services/SessionKeys';
 import SessionService from './services/session.service';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+
 function App() {
   const c = i18n;
   const [appMode, setAppMode] = useState<'light' | 'dark' | undefined>(undefined);;
@@ -43,6 +45,7 @@ function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
+      <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID!}>
       <div className={`${styles['thunder']}`}>
         <I18nextProvider i18n={c}>
           <div className={`${SessionService.getInstance().get(SessionKeys.AuthToken) !== null ? styles['show'] : styles['hide']}`}>
@@ -57,6 +60,7 @@ function App() {
           </BrowserRouter>
         </I18nextProvider>
       </div>
+      </GoogleOAuthProvider>
     </ThemeProvider>
   );
 }

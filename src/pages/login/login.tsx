@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
 import styles from './App.module.scss';
 import AuthService from '../../services/auth.service';
+import GoogleSignInButton from '../../components/google-sign-in/google-sign-in';
 
 function Login() {
     const { t } = useTranslation();
@@ -22,11 +23,10 @@ function Login() {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        if(await authService.login(data.get('email') as string, data.get('password') as string)){
+        if (await authService.login(data.get('email') as string, data.get('password') as string)) {
 
         }
-        else
-        {
+        else {
             alert("Invalid credentials");
         }
         // redirect to the home page
@@ -99,6 +99,13 @@ function Login() {
                         >
                             {t('sign-in')}
                         </Button>
+                        <Grid container>
+                            <Grid item xs>
+                                <Link href="#" variant="body2">
+                                   <GoogleSignInButton />
+                                </Link>
+                            </Grid>
+                        </Grid>
                         <Grid container>
                             <Grid item xs>
                                 <Link href="#" variant="body2">
