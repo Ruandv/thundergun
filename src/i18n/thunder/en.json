@@ -4,5 +4,9 @@
   "sign-up": "Don't have an account? Sign Up",
   "email-address-label": "Email Address",
   "password-label": "Password",
-  "remember-me": "Remember Me"
+  "remember-me": "Remember Me",
+  "profile": "Profile",
+  "myAccount": "My Account",
+  "logout": "Logout", 
+  "toggle_theme":"Toggle theme"
 }

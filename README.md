@@ -2,6 +2,19 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prerequisites
+- The project is using [Mockoon](https://mockoon.com/) to mock any server calls. The environment file can be located in [public folder](./public/thundergun.json)
+
+- Rename .env.example file to .env and update your variables.
+
+## Lets go
+Install it and run:
+
+```sh
+npm install
+npm start
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

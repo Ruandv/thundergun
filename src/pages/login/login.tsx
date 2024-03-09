@@ -13,12 +13,22 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { useTranslation } from 'react-i18next';
 import styles from './App.module.scss';
+import AuthService from '../../services/auth.service';
 
 function Login() {
     const { t } = useTranslation();
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const authService = AuthService();
+
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
+        if(await authService.login(data.get('email') as string, data.get('password') as string)){
+
+        }
+        else
+        {
+            alert("Invalid credentials");
+        }
         // redirect to the home page
         window.location.href = "/home";
     };
