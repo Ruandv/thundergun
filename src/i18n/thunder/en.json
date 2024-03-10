@@ -8,5 +8,6 @@
   "profile": "Profile",
   "myAccount": "My Account",
   "logout": "Logout", 
-  "toggle_theme":"Toggle theme"
+  "toggle_theme":"Toggle theme",
+  "home":"Home"
 }

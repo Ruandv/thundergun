@@ -63,7 +63,7 @@ function Login() {
                     <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                         <LockOutlinedIcon />
                     </Avatar>
-                    <Typography component="h1" variant="h5">
+                    {/* <Typography component="h1" variant="h5">
                         {t('sign-in')}
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
@@ -98,15 +98,11 @@ function Login() {
                             sx={{ mt: 3, mb: 2 }}
                         >
                             {t('sign-in')}
-                        </Button>
-                        <Grid container>
-                            <Grid item xs>
-                                <Link href="#" variant="body2">
-                                   <GoogleSignInButton />
-                                </Link>
-                            </Grid>
-                        </Grid>
-                        <Grid container>
+                        </Button> */}
+                    <Link href="#" variant="body2">
+                        <GoogleSignInButton />
+                    </Link>
+                    {/* <Grid container>
                             <Grid item xs>
                                 <Link href="#" variant="body2">
                                     {t('forgot-password')}
@@ -117,8 +113,8 @@ function Login() {
                                     {t('sign-up')}
                                 </Link>
                             </Grid>
-                        </Grid>
-                    </Box>
+                        </Grid> 
+                    </Box>*/}
                 </Box>
             </Grid>
         </Grid>

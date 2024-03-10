@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-no-undef */
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './toolbar.module.scss';
 import { AppBar, Avatar, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AccountCircle } from '@mui/icons-material';
 import AuthService from '../../services/auth.service';
 import { useTranslation } from 'react-i18next';
 
@@ -15,7 +14,15 @@ function AppToolbar({onThemeChanged}: AppToolbarProps) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const authService = AuthService();
     const { t } = useTranslation();
+    const [avatar, setAvatar] = React.useState<string>("");
 
+    useEffect(() => {
+        const call = async () => {
+            var avatars = await authService.getAvatar()
+            setAvatar(avatars);
+        };
+        call();
+    }, []);
     return (
         <div className={`${styles["toolbar"]}`}>
             <AppBar position="static">
@@ -30,7 +37,7 @@ function AppToolbar({onThemeChanged}: AppToolbarProps) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                        Photos
+                        {t("home")}
                     </Typography>
                     {(
                         <div>
@@ -42,7 +49,7 @@ function AppToolbar({onThemeChanged}: AppToolbarProps) {
                                 onClick={(event) => { setAnchorEl(event.currentTarget); }}
                                 color="inherit"
                             >
-                                <AccountCircle />
+                                <Avatar alt="account" src={avatar} />
                             </IconButton>
                             {<Menu
                                 id="menu-appbar"

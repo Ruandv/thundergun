@@ -15,7 +15,8 @@ const GoogleSignInButton = () => {
         <GoogleLogin
             onSuccess={credentialResponse => {
                 // save the token to the session storage
-                SessionService.getInstance().set(SessionKeys.AuthToken, credentialResponse.clientId!);
+                debugger;
+                SessionService.getInstance().set(SessionKeys.AuthToken, credentialResponse.credential!);
                 window.location.href = "/home";
             }}
             onError={() => {
